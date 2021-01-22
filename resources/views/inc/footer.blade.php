@@ -1,15 +1,22 @@
+<?php
+
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GuimailController;
+?>
 <footer>
     <ul>
         <b>Thắt mắt? Liên hệ chúng tôi</b>
-        <li><a href="#" class="a-w">FAQ</a></li>
-        <li><a href="#" class="a-w">Quan hệ đầu tư</a></li>
-        <li><a href="#" class="a-w">Privacy</a></li>
-        <li><a href="#" class="a-w">Kiểm tra tốc độ</a></li>
+        <li><a href="#" class="a-w">Giãng viên: Nguyễn Văn Long</a></li>
+        <li><a href="#" class="a-w">Võ Minh Trí (ps11154)</a></li>
+        <li><a href="#" class="a-w">Lê Hoàng Hải (ps11105)</a></li>
+        <li><a href="#" class="a-w">Lớp: WD15202</a></li>
+
     </ul>
 
     <ul>
         <b>Trung tâm chăm sóc khách hàng</b>
         <li><a href="#" class="a-w">Hỗ trợ</a></li>
+        <li><a href="{{Route ('lienhe')}}" class="a-w">Liên hệ</a></li>
         <li><a href="#" class="a-w">Tuyển dụng</a></li>
         <li><a href="#" class="a-w">Tùy chọn cookie</a></li>
         <li><a href="#" class="a-w">Thông báo pháp lý</a></li>
