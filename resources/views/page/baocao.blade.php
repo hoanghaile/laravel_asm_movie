@@ -48,6 +48,16 @@
                 <div class="report-view-1">
                     <h2 class="a-w">Báo cáo</h2>
                     <p>Chức năng:</p>
+                    <ul>
+                        <li>Migrate</li>
+                        <li>seed</li>
+                        <li>
+                            <p>Show trang chủ, trang chi tiết, show theo thê loại, liên hệ</p>
+                        </li>
+                        <li>
+                            <p>Admin, thêm xóa sửa, thể loại, phim, đạo diễn, diễn viên</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

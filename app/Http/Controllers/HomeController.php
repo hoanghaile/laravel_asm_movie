@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\actor;
 use App\Models\film;
 use App\Models\genres;
 use App\Models\film_actor;
@@ -23,17 +24,10 @@ class HomeController extends Controller
 
     public function slug($s)
     {
-<<<<<<< HEAD
         $f = film::where('slug', $s)->first();
-        // if ($f == null) {
-        //     return 
-        // }
-=======
-        $f = film::where('slug', $s)->first();        
         if (!$f) {
             abort(404);
         }
->>>>>>> e64b9cf0ead39db9f4784947aa83c6f2e95940d1
 
         return dd($f);
         // return view('page.index', ["genres" => $genres]);
@@ -45,15 +39,17 @@ class HomeController extends Controller
         $viewfilm = film::orderby('view', 'desc')->limit(10)->get();
         $detailsesion = film::where('id', $id)->get();
         $genres = genres::all();
+        $actor = $detail->actor;
         if ($detail == null) {
             echo 'Phim không tồn tại';
             return;
         }
 
-        // return dd($viewfilm);
+        // return dd($actor);
         return view('page.detail', [
             'detail' => $detail,
             'genres' => $genres,
+            'actor' => $actor,
             'detailsesion' => $detailsesion,
             'viewfilm' => $viewfilm,
 

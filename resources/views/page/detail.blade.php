@@ -143,79 +143,34 @@ use APP\Http\Controllers\HomeController;
                 </div>
                 <div id="castMovie" class="fixidtab sbox">
                     <h2>Diễn viên</h2>
-                    <div class="persons">
-                        <div class="person">
-                            <div class="person-img">
-                                <a href="#">
-                                    <img src="/storage/img/{{ $de->wallpaper }}" />
-                                </a>
-                            </div>
-                            <div class="person-data">
-                                <div class="person-data-name">
-                                    <a href="#">Rita Rosemary</a>
+                        <div class="persons">
+
+                    @foreach ($actor as $item)
+                            <div class="person">
+                                <div class="person-img">
+                                    <a href="#">
+                                        <img src="/storage/img/{{ $item->image }}" />
+                                    </a>
                                 </div>
-                                <div class="caracter">Rita Rosemary</div>
-                            </div>
-                        </div>
-                        <!-- <div class="person">
-                            <div class="person-img">
-                                <a href="#">
-                                    <img src="img/rita.jpg" />
-                                </a>
-                            </div>
-                            <div class="person-data">
-                                <div class="person-data-name">
-                                    <a href="#">Rita Rosemary</a>
+                                <div class="person-data">
+                                    <div class="person-data-name">
+                                        <a href="#">{{$item->name}}</a>
+                                    </div>
+                                    {{-- <div class="caracter">Rita Rosemary</div> --}}
                                 </div>
-                                <div class="caracter">Rita Rosemary</div>
                             </div>
-                        </div>
-                        <div class="person">
-                            <div class="person-img">
-                                <a href="#">
-                                    <img src="img/rita.jpg" />
-                                </a>
-                            </div>
-                            <div class="person-data">
-                                <div class="person-data-name">
-                                    <a href="#">Rita Rosemary</a>
-                                </div>
-                                <div class="caracter">Rita Rosemary</div>
-                            </div>
-                        </div>
-                        <div class="person">
-                            <div class="person-img">
-                                <a href="#">
-                                    <img src="img/rita.jpg" />
-                                </a>
-                            </div>
-                            <div class="person-data">
-                                <div class="person-data-name">
-                                    <a href="#">Rita Rosemary</a>
-                                </div>
-                                <div class="caracter">Rita Rosemary</div>
-                            </div>
-                        </div>
-                        <div class="person">
-                            <div class="person-img">
-                                <a href="#">
-                                    <img src="img/rita.jpg" />
-                                </a>
-                            </div>
-                            <div class="person-data">
-                                <div class="person-data-name">
-                                    <a href="#">Rita Rosemary</a>
-                                </div>
-                                <div class="caracter">Rita Rosemary</div>
-                            </div>
-                        </div> -->
+                        
+                    @endforeach
                     </div>
+                    
                 </div>
                 <div id="trailerMovie" class="fixidtab sbox">
                     <h2>Video Trailers</h2>
                     <div class="videobox">
                         <div class="embed">
-                            {{$de->link_youtube}}
+                            @php
+                            echo $de->link_youtube
+                            @endphp
                         </div>
                     </div>
                 </div>
