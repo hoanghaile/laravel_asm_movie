@@ -14,7 +14,7 @@
 
 <div class="main-content-inner">
     <div class="  mt-3 d-flex justify-content-between">
-        <a href="admin/filmle"><button class="btn btn-primary">Trở về</button></a>
+        <a href="{{ url()->previous() }}"><button class="btn btn-primary">Trở về</button></a>
     </div>
     <!-- overview area start -->
     <div class="row mt-3">
@@ -32,7 +32,7 @@
                         <div class="col-8">
                             <div class="d-flex align-items-center justify-content-between">
                                 <h1>{{$film->title}}</h1>
-                                <a href="admin/filmle/{{$film->id}}/edit"><button class="btn btn-primary">Chỉnh sửa</button></a>
+                                <a href="{{route('film.edit', $film->id) }}"><button class="btn btn-primary">Chỉnh sửa</button></a>
                             </div>
                             <div class="mt-3 d-flex align-items-center  p-0">
                                 <div class="btn btn-danger p-1 pl-2 pr-2 mr-5" style="height: 30px;">Điểm IMDB: {{$film->imdb}}</div>
@@ -49,8 +49,22 @@
                             <hr>
                             <p style="font-size: 1.1rem" class="mb-3">Nội Dung:</p>
                             <div class=""> {{$film->content}} </div>
+
                             <div class="mt-4">
                                 <img src="{{ asset('storage/img/'.$film->wallpaper) }}" alt="">
+                            </div>
+
+                            <hr>
+                            <p style="font-size: 1.1rem" class="mb-3">Diễn viên:</p>
+                            <div class="row"> 
+                                @foreach ($actor as $item)
+                                <div class="card col-3">
+                                    <img src="{{ asset('storage/img/' . $item->image)}}" class="card-img-top" style="height: 200px ; object-fit: cover">
+                                    <div class="card-body">
+                                        <h6 class="card-title">{{$item->name}}</h6>
+                                    </div>
+                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

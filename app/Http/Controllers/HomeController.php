@@ -23,10 +23,17 @@ class HomeController extends Controller
 
     public function slug($s)
     {
+<<<<<<< HEAD
         $f = film::where('slug', $s)->first();
         // if ($f == null) {
         //     return 
         // }
+=======
+        $f = film::where('slug', $s)->first();        
+        if (!$f) {
+            abort(404);
+        }
+>>>>>>> e64b9cf0ead39db9f4784947aa83c6f2e95940d1
 
         return dd($f);
         // return view('page.index', ["genres" => $genres]);
